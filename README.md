@@ -1,2 +1,2 @@
-# sqoop
-contains some sqoop commands used for learning and reference
+# Sqoop import-export commands for reference
+Practice and learning sqoop basic commands.
