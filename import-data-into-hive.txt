@@ -1,0 +1,25 @@
+/*Importing data into hive*/
+[cloudera@quickstart ~]$ sqoop import --connect jdbc:mysql://127.0.0.1/sqoop_db  --username root -P --split-by id --columns id,name --table customer  --target-dir /user/samples/sqoop_data --fields-terminated-by "," --hive-import --create-hive-table --hive-table sqoop_hive_db.customers
+
+hive> show databases;
+OK
+default
+sqoop_hive_db
+Time taken: 0.817 seconds, Fetched: 2 row(s)
+
+hive> use sqoop_hive_db;
+OK
+Time taken: 0.066 seconds
+
+hive> show tables;
+OK
+customers
+Time taken: 0.09 seconds, Fetched: 1 row(s)
+
+hive> select * from customers;
+OK
+1	John
+2	Kevin
+3	Mark
+4	George
+Time taken: 0.581 seconds, Fetched: 4 row(s)
