@@ -1,0 +1,14 @@
+/*Sqoop:Importing data from MySQL into HDFS*/
+
+
+[cloudera@quickstart ~]$ sqoop import \
+> --connect jdbc:mysql://127.0.0.1/sqoop_db \
+> --username root \
+> --password ***** \
+> --table customer \
+> --m 1
+
+[cloudera@quickstart ~]$ hdfs dfs -ls customer
+Found 2 items
+-rw-r--r--   1 cloudera cloudera          0 2016-08-13 07:45 customer/_SUCCESS
+-rw-r--r--   1 cloudera cloudera         67 2016-08-13 07:45 customer/part-m-00000
