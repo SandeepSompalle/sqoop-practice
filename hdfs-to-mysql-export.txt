@@ -1,2 +1,2 @@
-/8Export from hdfs to mysql*/
+/* Export from hdfs to mysql*/
 sqoop export --connect jdbc:mysql://127.0.0.1/sqoop_db  --username root --password ***** --table employee --m 1 --export-dir /user/samples
